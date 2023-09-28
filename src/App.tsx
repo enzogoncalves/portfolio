@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import "./assets/css/tailwind.css"
 import "./assets/fonts/style.css"
-import Tech from './assets/components/Tech';
+import Tech from './assets/components/Tech'
+import Flickity from 'react-flickity-component'
 
+const flickityOptions = {
+  pageDots: false,
+  wrapAround: true,
+  autoPlay: 2000,
+  freeScroll: false,
+}
 
 const App = () => {
   const [showNav, setShowNav] = useState<boolean>(false);
@@ -41,15 +48,58 @@ const App = () => {
 
       <section id="techs">
         <h2>Tecnologias e Linguagens</h2>
+        <Flickity
+          className={'carousel'} // default ''
+          elementType={'div'} // default 'div'
+          options={flickityOptions} // takes flickity options {}
+          disableImagesLoaded={false} // default false
+          static
+        >
+          <Tech 
+            alt='js' 
+            img='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' 
+            tech='JavaScript'
+            text='JavaScript é uma linguagem de script orientada a objetos e plataforma cruzada usada para tornar as páginas da Web interativas.'
+          />
+          <Tech 
+            alt='nodejs' 
+            img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" 
+            tech='NodeJs'
+            text='Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web.'
+          />
+          <Tech 
+            alt='html' 
+            img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
+            tech='HTML'
+            text='HTML (Linguagem de Marcação de Hipertexto) é o código que você usa para estruturar uma página web e seu conteúdo.'
+          />
+          <Tech 
+            alt='css' 
+            img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
+            tech='CSS'
+            text='CSS é usado para definir estilos para suas páginas da web, incluindo design, layout e variações de exibição para diferentes dispositivos e tamanhos de tela.'
+          />
+          <Tech 
+            alt='sass' 
+            img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" 
+            tech='Sass'
+            text='Sass é uma linguagem de folha de estilo compilada em CSS. Ele permite que você use tudo com uma sintaxe totalmente compatível com CSS'
+          />
+          <Tech 
+            alt='git' 
+            img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" 
+            tech='Git'
+            text='Git é um sistema de controle de versão e de código aberto, projetado para lidar com tudo, desde projetos pequenos a muito grandes, com velocidade e eficiência.'
+          />
+          <Tech 
+            alt='tailwindcss' 
+            img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" 
+            tech='Tailwind Css'
+            text='Uma estrutura CSS utilitária repleta de classes que podem ser compostas para construir qualquer design, diretamente em sua marcação.'
+          />
+        </Flickity>
         <div className="flex flex-wrap justify-center gap-4 my-0 mx-auto">
-          <Tech alt='js' img='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' text='JavaScript'/>
-          <Tech alt='nodejs' img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" text='NodeJs'/>
-          <Tech alt='html' img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" text='HTML'/>
-          <Tech alt='css' img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" text='CSS'/>
-          <Tech alt='sass' img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" text='Sass'/>
-          <Tech alt='git' img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" text='Git'/>
-          <Tech alt='tailwindcss' img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" text='Tailwind Css'/>
-          <Tech alt='csharp' img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" text='C#'/>
+          
         </div>
       </section>
 

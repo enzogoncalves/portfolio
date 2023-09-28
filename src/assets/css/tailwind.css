@@ -18,12 +18,4 @@
     h2 {
         @apply font-title mb-4 text-2xl
     }
-
-    .tech {
-        @apply flex flex-col items-center justify-center w-[100px] h-[100px] rounded-md shadow-small cursor-pointer duration-200 bg-white backdrop-grayscale hover:shadow-medium hover:bg-gray-200
-    }
-
-    .tech img {
-        @apply w-[60px] h-auto
-    }
 }
