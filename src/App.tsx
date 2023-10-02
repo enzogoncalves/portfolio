@@ -2,17 +2,25 @@ import { useState } from 'react';
 import "./assets/css/tailwind.css"
 import "./assets/fonts/style.css"
 import Tech from './assets/components/Tech'
-import Flickity from 'react-flickity-component'
-
-const flickityOptions = {
-  pageDots: false,
-  wrapAround: true,
-  autoPlay: 2000,
-  freeScroll: false,
-}
+import Slider, {Settings} from 'react-slick'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const App = () => {
   const [showNav, setShowNav] = useState<boolean>(false);
+  
+  const settings : Settings = {
+    dots: false,
+    infinite: true,
+    speed: 3000,
+    draggable: true,
+    slidesPerRow: 1,
+    slidesToShow: 1,
+    autoplaySpeed: 0,
+    autoplay: true,
+    variableWidth: true
+  };
+
 
   function toggleNavigation() {
     setShowNav(previous => !previous)
@@ -48,12 +56,8 @@ const App = () => {
 
       <section id="techs">
         <h2>Tecnologias e Linguagens</h2>
-        <Flickity
-          className={'carousel'} // default ''
-          elementType={'div'} // default 'div'
-          options={flickityOptions} // takes flickity options {}
-          disableImagesLoaded={false} // default false
-          static
+        <Slider
+          {...settings}
         >
           <Tech 
             alt='js' 
@@ -69,14 +73,14 @@ const App = () => {
           />
           <Tech 
             alt='html' 
-            img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
+            img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
             tech='HTML'
             text='HTML (Linguagem de Marcação de Hipertexto) é o código que você usa para estruturar uma página web e seu conteúdo.'
           />
           <Tech 
             alt='css' 
-            img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
-            tech='CSS'
+            img="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
+            tech='CSS3'
             text='CSS é usado para definir estilos para suas páginas da web, incluindo design, layout e variações de exibição para diferentes dispositivos e tamanhos de tela.'
           />
           <Tech 
@@ -97,10 +101,7 @@ const App = () => {
             tech='Tailwind Css'
             text='Uma estrutura CSS utilitária repleta de classes que podem ser compostas para construir qualquer design, diretamente em sua marcação.'
           />
-        </Flickity>
-        <div className="flex flex-wrap justify-center gap-4 my-0 mx-auto">
-          
-        </div>
+        </Slider>
       </section>
 
       <hr/>
