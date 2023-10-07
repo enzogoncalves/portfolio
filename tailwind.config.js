@@ -22,6 +22,15 @@ export default {
       boxShadow: {
         'small': '0 0 4px rgba(0, 0, 0, 0.3)',
         'medium': '0 0 4px rgba(0, 0, 0, 0.6)'
+      },
+      keyframes: {
+        infiniteScroll: {
+          '0%': { left: 0},
+          '100%': { left: '-100%'}
+        }
+      },
+      animation: {
+        'techs': 'infiniteScroll 16s linear infinite'
       }
     },
   },
