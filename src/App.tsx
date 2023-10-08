@@ -2,8 +2,6 @@ import { useState } from 'react';
 import "./assets/css/tailwind.css"
 import "./assets/fonts/style.css"
 import Tech from './assets/components/Tech'
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
 
 const App = () => {
   const [showNav, setShowNav] = useState<boolean>(false);
