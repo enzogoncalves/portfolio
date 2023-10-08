@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import "./assets/css/tailwind.css"
 import "./assets/fonts/style.css"
-import Tech from './assets/components/Tech'
+import Tech from './components/Tech'
 
 const App = () => {
   const [showNav, setShowNav] = useState<boolean>(false);
@@ -138,7 +138,7 @@ const App = () => {
               </div>
               <a href='https://movies-website-enzogoncalves.vercel.app/' target='_blank' className='project-link'><i className='icon-arrow-up-right2'></i></a>
             </div>
-            <img src="../src/assets/imgs/movies-website.png" alt="Movies and Tv Shows Website" className="project-illustration" />
+            <img src="imgs/movies-website.png" alt="Movies and Tv Shows Website" className="project-illustration" />
           </div>
 
           <div className="project">
@@ -151,7 +151,7 @@ const App = () => {
               </div>
               <a href='https://tailwindcss-school-website.vercel.app/' target='_blank' className='project-link'><i className='icon-arrow-up-right2'></i></a>
             </div>
-            <img src="../src/assets/imgs/tailwindcss-school-website.png" alt="Movies and Tv Shows Website" className="project-illustration" />
+            <img src="imgs/tailwindcss-school-website.png" alt="Movies and Tv Shows Website" className="project-illustration" />
           </div>
 
           <div className="project">
@@ -166,7 +166,7 @@ const App = () => {
               </div>
               <a href='https://card-memory-game-red.vercel.app/home' target='_blank' className='project-link'><i className='icon-arrow-up-right2'></i></a>
             </div>
-            <img src="../src/assets/imgs/card-memory-game-website.png" alt="Movies and Tv Shows Website" className="project-illustration" />
+            <img src="imgs/card-memory-game-website.png" alt="Movies and Tv Shows Website" className="project-illustration" />
           </div>
         </div>
       </section> 
