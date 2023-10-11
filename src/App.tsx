@@ -33,8 +33,11 @@ const App = () => {
       <div className='flex flex-col mx-auto max-w-[1000px]'>
         <div className="w-full flex items-center justify-between py-2 px-6 h-header">
           <h1 id="logo" className="font-title text-2xl md:text-3xl text-center pt-1">Enzo Mateus</h1>
-          <i className={`${showNav ? 'hidden' : ''} icon-menu text-2xl w-7 cursor-pointer p-1`} onClick={() => {toggleNavigation()}}></i>
-          <i className={`${showNav ? '' : 'hidden'} icon-close text-2xl w-7 cursor-pointer p-1`} onClick={() => {toggleNavigation()}}></i>
+          <div className="relative h-[19px] w-7 justify-between cursor-pointer" onClick={toggleNavigation}>
+            <div className={`${showNav ? 'rotate-45 top-1/2 -translate-y-1/2' : ''} absolute top-0 left-0 h-[3px] w-7 bg-black rounded-full transition-all`}></div>
+            <div className={`${showNav ? 'left-5 opacity-0' : ''} absolute top-1/2 -translate-y-1/2 left-0 h-[3px] w-7 bg-black rounded-full transition-all`}></div>
+            <div className={`${showNav ? '-rotate-45 top-1/2 -translate-y-1/2' : ''} absolute bottom-0 left-0 h-[3px] w-7 bg-black rounded-full transition-all`}></div>
+          </div>
         </div>
         <nav className={`${showNav ? '' : 'hidden'}`}>
           <ul className="flex flex-col list-none">
@@ -197,6 +200,7 @@ const App = () => {
         </div>
       </section> 
     </main>
+
     <footer id="contact" className='flex flex-col items-center justify-center gap-5 px-2 pt-14 pb-6'>
         <h3 className='text-3xl font-bold mb-8'>Entre em Contato</h3>
         <div className='flex gap-5 xs:gap-20 px-2'>
