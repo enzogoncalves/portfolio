@@ -7,10 +7,6 @@
         @apply decoration-transparent py-1 px-2 font-default inline-block w-full border-b-2 border-gray-400 bg-white hover:bg-gray-300
     }
 
-    .text {
-        @apply font-default font-normal leading-6
-    }
-
     section {
         @apply max-w-[1100px] mx-auto pt-16 pb-8 px-4
     }
