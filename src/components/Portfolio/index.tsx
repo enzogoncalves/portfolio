@@ -1,5 +1,3 @@
-import React from 'react'
-
 type Portfolio = {
     title: string,
     techs: Array<string>,
