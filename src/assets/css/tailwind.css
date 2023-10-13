@@ -4,11 +4,11 @@
 
 @layer components {
     .nav-item {
-        @apply relative duration-150 font-default text-center text-2xl sm:text-base font-medium sm:font-normal decoration-transparent py-1 px-2 inline-block
+        @apply relative duration-150 font-default text-center text-2xl sm:text-base font-medium sm:font-normal dark:text-white decoration-transparent py-1 px-2 inline-block
     }
 
     .nav-item::before {
-        @apply content-[''] absolute bottom-0 left-1/2 w-0 h-[2px] bg-black hover:w-full transition-all hover:left-0
+        @apply content-[''] absolute bottom-0 left-1/2 w-0 h-[2px] bg-black dark:bg-white hover:w-full transition-all hover:left-0
     }
 
     section {
@@ -19,37 +19,8 @@
         @apply font-title mb-4 text-2xl
     }
 
-    /* Project */
-    .project {
-        @apply grid grid-cols-1 grid-rows-2 shadow-medium rounded-md max-w-md overflow-hidden
-    }
-
-    .project .project-header {
-        @apply relative flex flex-col gap-4 p-4
-    }
-
-    .project .project-title {
-        @apply text-base sm:text-lg font-bold uppercase
-    }
-
-    .project .project-techs {
-        @apply flex flex-wrap gap-2
-    }
-
-    .project .project-techs span {
-        @apply py-2 px-2 sm:py-4 sm:px-3 text-sm border rounded-full shadow-sm
-    }
-
-    .project a {
-        @apply w-10 h-10 sm:w-14 sm:h-14 grid place-items-center rounded-full bg-zinc-900 leading-none absolute bottom-5 right-5
-    }
-
-    .project a i {
-        @apply sm:text-xl text-white 
-    }
-
-    .project img {
-        @apply h-full object-cover object-center
+    hr {
+        @apply border-gray-300 dark:border-zinc-800
     }
 }
 

@@ -1,11 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import "./assets/css/tailwind.css"
 import "./assets/fonts/style.css"
 import Tech from './components/Tech'
+import Switch from 'react-switch'
+import Portfolio from './components/Portfolio';
 
 const App = () => {
   const [showNav, setShowNav] = useState<boolean>(false);
   const [showScrollToTopButton, setShowScrollToTopButton] = useState<boolean>(false);
+  const [theme, setTheme] = useState<string>(
+    localStorage.getItem("theme") === "dark" ? "dark" : "light"
+  )
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+
+    const removeOldTheme = theme === "dark" ? "light" : "dark"
+
+    root.classList.remove(removeOldTheme)
+    root.classList.add(theme)
+    localStorage.setItem("theme", theme)
+  }, [theme])
+
   
   function toggleNavigation() {
     setShowNav(previous => !previous)
@@ -25,21 +41,37 @@ const App = () => {
 
   return (
    <>
-    <div className={`${showScrollToTopButton ? 'block right-8' : '-right-28'} fixed bottom-[50px] z-50 w-14 sm:w-16 h-14 sm:h-16 grid place-items-center border-2 border-neutral-700 rounded-full cursor-pointer group bg-white hover:bg-neutral-900 hover:border-neutral-900 transition-all duration-200`} title="Scroll to the top of the page" onClick={() => scrollToTop()}>
+    <div className={`${showScrollToTopButton ? 'block right-8' : '-right-28'} fixed bottom-[50px] z-50 w-14 sm:w-16 h-14 sm:h-16 grid place-items-center border-2 border-neutral-700 dark:border-white rounded-full cursor-pointer group bg-white dark:bg-neutral-900 hover:bg-neutral-900 hover:border-neutral-900 hover:scale-105 transition-all duration-200`} title="Scroll to the top of the page" onClick={() => scrollToTop()}>
       <i className='icon-arrow-up text-xl sm:text-2xl group-hover:text-white'></i>
     </div>
 
-    <header className='h-header sticky z-[999] top-0 left-0 w-full bg-white shadow-md'>
-      <div className='flex justify-center gap-2 mx-auto max-w-[1100px] relative py-2 px-6 h-header'>
-        <div className="w-full sm:w-auto sm:min-w-max flex items-center justify-between bg-white relative z-50">
-          <h1 id="logo" className="font-title text-2xl md:text-3xl text-center pt-1">Enzo Mateus</h1>
+    <a href="" onClick={() => setTheme('a')}></a>
+
+    <header className='h-header sticky z-[999] top-0 left-0 w-full bg-white dark:bg-zinc-900 shadow-md dark:shadow-zinc-800'>
+      <div className='flex justify-center gap-2 mx-auto max-w-[1100px] relative h-header'>
+        <div className="w-full sm:w-auto sm:min-w-max flex items-center py-2 px-6 justify-between relative z-50 bg-white dark:bg-zinc-900">
+          <h1 id="logo" className="font-title dark:text-white text-2xl md:text-3xl text-center pt-1">Enzo Mateus</h1>
+          <Switch
+            onChange={() => setTheme(prevTheme => prevTheme == "dark" ? "light" : "dark")}
+            checked={theme == "dark"}
+            checkedIcon={false}
+            uncheckedIcon={false}
+            height={20}
+            width={60}
+            handleDiameter={25}
+            onHandleColor={"#c0c2cc"}
+            onColor={"#525252"}
+            offHandleColor={"#525252"}
+            offColor={"#c0c2cc"}
+            className="justify-self-end xsm:col-start-3 row-span-2 self-center xsm:row-span-1"
+          />
           <div className="sm:hidden relative h-[19px] w-7 justify-between cursor-pointer" onClick={toggleNavigation}>
-            <div className={`${showNav ? 'rotate-45 top-1/2 -translate-y-1/2' : ''} absolute top-0 left-0 h-[3px] w-7 bg-black rounded-full transition-all`}></div>
-            <div className={`${showNav ? 'left-5 opacity-0' : ''} absolute top-1/2 -translate-y-1/2 left-0 h-[3px] w-7 bg-black rounded-full transition-all`}></div>
-            <div className={`${showNav ? '-rotate-45 top-1/2 -translate-y-1/2' : ''} absolute bottom-0 left-0 h-[3px] w-7 bg-black rounded-full transition-all`}></div>
+            <div className={`${showNav ? 'rotate-45 top-1/2 -translate-y-1/2' : ''} absolute top-0 left-0 h-[3px] w-7 bg-black dark:bg-white rounded-full transition-all`}></div>
+            <div className={`${showNav ? 'left-5 opacity-0' : ''} absolute top-1/2 -translate-y-1/2 left-0 h-[3px] w-7 bg-black dark:bg-white rounded-full transition-all`}></div>
+            <div className={`${showNav ? '-rotate-45 top-1/2 -translate-y-1/2' : ''} absolute bottom-0 left-0 h-[3px] w-7 bg-black dark:bg-white rounded-full transition-all`}></div>
           </div>
         </div>
-        <nav className={`${showNav ? 'top-0 h-screen sm:h-auto px-4' : 'pointer-events-none -top-full sm:pointer-events-auto'} fixed sm:static w-screen sm:w-full bg-white sm:bg-transparent transition-all duration-200 z-20 grid place-items-center sm:flex sm:justify-center`}>
+        <nav className={`${showNav ? 'top-0 h-screen sm:h-auto px-4' : 'pointer-events-none -top-full sm:pointer-events-auto'} fixed sm:static w-screen sm:w-full bg-white dark:bg-zinc-900 sm:bg-transparent transition-all duration-200 z-10 grid place-items-center sm:flex sm:justify-center`}>
           <ul className="sm:w-full flex flex-col sm:flex-row sm:justify-end gap-14 sm:gap-2 md:gap-6 items-center list-none">
             <li className='text-center'><a href="#about" className="nav-item" onClick={() => toggleNavigation()}>Sobre mim</a></li>
             <li className='text-center'><a href="#techs" className="nav-item" onClick={() => toggleNavigation()}>Linguagens & Tecnologias</a></li>
@@ -56,11 +88,11 @@ const App = () => {
         <img src="https://avatars.githubusercontent.com/u/75916483?v=4" alt="profile picture" className='w-[125px] sm:w-[150px] lg:w-[200px] rounded-md float-right clear-both pl-2 pb-2'/>
         <p className="font-default font-normal leading-6">Meu nome é Enzo Mateus Gonçalves e minha jornada na programação se iniciou em 2019, com o desenvolvimento de aplicações web. Sou Full Stack Web Developer e com interesse em partes do processo do desenvolvimento de aplicativos mobile.</p>
         <div className="mt-4 flex gap-4">
-          <a href="https://www.linkedin.com/in/enzo-mateus-673ba31a4/" target="_blank" className='border border-[#0077B5] shadow-md w-20 h-14 grid place-items-center group hover:bg-[#0077B5] transition' title='Linkedin redirect link'>
-            <i className='icon-linkedin text-2xl text-[#0077B5] group-hover:text-white'></i>
+          <a href="https://www.linkedin.com/in/enzo-mateus-673ba31a4/" target="_blank" className='border border-[#0077B5] dark:hover:border-white shadow-md w-20 h-14 grid place-items-center group dark:bg-[#0077B5] hover:bg-[#0077B5] dark:hover:bg-white transition' title='Linkedin redirect link'>
+            <i className='icon-linkedin text-2xl text-[#0077B5] dark:text-white group-hover:text-white dark:group-hover:text-[#0077B5]'></i>
           </a>
-          <a href="https://github.com/enzogoncalves" target="_blank" className='border border-neutral-800 shadow-md w-20 h-14 grid place-items-center group hover:bg-neutral-800 transition' title='Github redirect link'>
-            <i className='icon-github text-2xl text-neutral-800 group-hover:text-white'></i>
+          <a href="https://github.com/enzogoncalves" target="_blank" className='border border-neutral-800 shadow-md w-20 h-14 grid place-items-center group dark:bg-neutral-800 hover:bg-neutral-800 dark:hover:bg-neutral-200 transition' title='Github redirect link'>
+            <i className='icon-github text-2xl text-neutral-800 dark:text-white group-hover:text-white dark:group-hover:text-neutral-800'></i>
           </a>
         </div>
       </section>
@@ -156,47 +188,27 @@ const App = () => {
       <section id="projects">
         <h2>Projetos</h2>
         <div className="projects flex flex-wrap gap-4 justify-center">
-          <div className="project">
-            <div className="project-header">
-              <p className='project-title'>Movies & TvShows Website</p>
-              <div className="project-techs">
-                <span>React</span>
-                <span>Styled-Components</span>
-                <span>TailwindCSS</span>
-                <span>TMDB API</span>
-              </div>
-              <a href='https://movies-website-enzogoncalves.vercel.app/' target='_blank' className='project-link'><i className='icon-arrow-up-right'></i></a>
-            </div>
-            <img src="imgs/movies-website.png" alt="Movies and Tv Shows Website" className="project-illustration" />
-          </div>
-
-          <div className="project">
-            <div className="project-header">
-              <p className='project-title'>School Home Page</p>
-              <div className="project-techs">
-                <span>JS</span>
-                <span>TailwindCSS</span>
-                <span>HTML</span>
-              </div>
-              <a href='https://tailwindcss-school-website.vercel.app/' target='_blank' className='project-link'><i className='icon-arrow-up-right'></i></a>
-            </div>
-            <img src="imgs/tailwindcss-school-website.png" alt="Movies and Tv Shows Website" className="project-illustration" />
-          </div>
-
-          <div className="project">
-            <div className="project-header">
-              <p className='project-title'>Card Memory Game</p>
-              <div className="project-techs">
-                <span>React</span>
-                <span>Typescript</span>
-                <span>TailwindCSS</span>
-                <span>Styled-Components</span>
-                <span>Firebase</span>
-              </div>
-              <a href='https://card-memory-game-red.vercel.app/home' target='_blank' className='project-link'><i className='icon-arrow-up-right'></i></a>
-            </div>
-            <img src="imgs/card-memory-game-website.png" alt="Movies and Tv Shows Website" className="project-illustration" />
-          </div>
+          <Portfolio
+            title='Movies & TvShows Website'
+            techs={['React', 'Styled Components', 'TailwindCSS', 'TMDBAPI']}
+            linkTo='https://movies-website-enzogoncalves.vercel.app/'
+            illustration='imgs/movies-website.png'
+            alt='movies and tv shows website illustration'
+          />
+          <Portfolio
+            title='School Homepage'
+            techs={['JS', 'TailwindCSS', 'HTML']}
+            linkTo='https://tailwindcss-school-website.vercel.app/'
+            illustration='imgs/tailwindcss-school-website.png'
+            alt='homepage school website illustration'
+          />
+          <Portfolio
+            title='Card Memory Game'
+            techs={['React', 'Typescript', 'TailwindCSS', 'Styled Components', 'Firebase']}
+            linkTo='https://card-memory-game-red.vercel.app/home'
+            illustration='imgs/card-memory-game-website.png'
+            alt='game website illustration'
+          />
         </div>
       </section> 
     </main>
@@ -205,29 +217,29 @@ const App = () => {
         <h3 className='text-3xl font-bold mb-8'>Entre em Contato</h3>
         <div className='flex gap-5 xs:gap-20 px-2'>
           <a href="https://www.linkedin.com/in/enzo-mateus-673ba31a4/" target='_blank' className='flex flex-col items-center gap-2'>
-            <div className='flex items-center justify-center p-3 border-2 rounded-full border-neutral-800 group hover:bg-neutral-800 transition-all duration-100'>
-              <i className="icon-linkedin text-2xl group-hover:text-white"></i>
+            <div className='flex items-center justify-center p-3 border-2 border-neutral-800 dark:border-white rounded-full group dark:bg-white hover:bg-neutral-800 dark:hover:bg-zinc-800 transition-all duration-100'>
+              <i className="icon-linkedin text-2xl group-hover:text-white dark:text-neutral-800"></i>
             </div>
             <p>Linkedin</p>
           </a>
           <a href="mailto:enzo.mat.gonc@hotmail.com" type='mailto' target='_blank' className='flex flex-col items-center gap-2'>
-            <div className='flex items-center justify-center p-3 border-2 rounded-full border-neutral-800 group hover:bg-neutral-800 transition-all duration-100'>
-              <i className="icon-mail text-2xl group-hover:text-white"></i>
+            <div className='flex items-center justify-center p-3 border-2 border-neutral-800 dark:border-white rounded-full group dark:bg-white hover:bg-neutral-800 dark:hover:bg-zinc-800 transition-all duration-100'>
+              <i className="icon-mail text-2xl group-hover:text-white dark:text-neutral-800"></i>
             </div>
             <p>Email</p>
           </a>
           <a href="https://github.com/enzogoncalves" target='_blank' className='flex flex-col items-center gap-2'>
-            <div className='flex items-center justify-center p-3 border-2 rounded-full border-neutral-800 group hover:bg-neutral-800 transition-all duration-100'>
-              <i className="icon-github text-2xl group-hover:text-white"></i>
+            <div className='flex items-center justify-center p-3 border-2 border-neutral-800 dark:border-white rounded-full group dark:bg-white hover:bg-neutral-800 dark:hover:bg-zinc-800 transition-all duration-100'>
+              <i className="icon-github text-2xl group-hover:text-white dark:text-neutral-800"></i>
             </div>
             <p>Github</p>
           </a>
         </div>
-        <div className='flex justify-center flex-wrap gap-2 sm:gap-10 text-neutral-600 mt-8'>
-          <a href="#about" className='hover:text-black hover:underline'>Sobre</a>
-          <a href="#techs" className='hover:text-black hover:underline'>Linguagens e Tecnologias</a>
-          <a href="#projects" className='hover:text-black hover:underline'>Projetos</a>
-          <a href="#contact" className='hover:text-black hover:underline'>Contato</a>
+        <div className='flex justify-center flex-wrap gap-2 sm:gap-10 text-neutral-600 dark:text-neutral-400 mt-8'>
+          <a href="#about" className='hover:text-black dark:hover:text-white hover:underline'>Sobre</a>
+          <a href="#techs" className='hover:text-black dark:hover:text-white hover:underline'>Linguagens e Tecnologias</a>
+          <a href="#projects" className='hover:text-black dark:hover:text-white hover:underline'>Projetos</a>
+          <a href="#contact" className='hover:text-black dark:hover:text-white hover:underline'>Contato</a>
         </div>
       </footer>
    </>
