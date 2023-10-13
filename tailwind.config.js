@@ -19,6 +19,9 @@ export default {
         'title': "'Josefin Sans', sans-serif",
         'default': "'Rubik', sans-serif"
       },
+      spacing: {
+        'header': '70px'
+      },
       boxShadow: {
         'small': '0 0 4px rgba(0, 0, 0, 0.3)',
         'medium': '0 0 4px rgba(0, 0, 0, 0.6)'

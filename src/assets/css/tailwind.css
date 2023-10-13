@@ -4,11 +4,15 @@
 
 @layer components {
     .nav-item {
-        @apply decoration-transparent py-1 px-2 font-default inline-block w-full border-b-2 border-gray-400 bg-white hover:bg-gray-300
+        @apply relative duration-150 font-default text-center text-2xl sm:text-base font-medium sm:font-normal decoration-transparent py-1 px-2 inline-block
+    }
+
+    .nav-item::before {
+        @apply content-[''] absolute bottom-0 left-1/2 w-0 h-[2px] bg-black hover:w-full transition-all hover:left-0
     }
 
     section {
-        @apply max-w-[1100px] mx-auto pt-16 pb-8 px-4
+        @apply max-w-[1100px] mx-auto pt-20 pb-8 px-4
     }
 
     h2 {
