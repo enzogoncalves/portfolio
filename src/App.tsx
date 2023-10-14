@@ -49,30 +49,32 @@ const App = () => {
 
     <header className='h-header sticky z-[999] top-0 left-0 w-full bg-white dark:bg-zinc-900 shadow-md dark:shadow-zinc-800'>
       <div className='flex justify-center gap-2 mx-auto max-w-[1100px] relative h-header'>
-        <div className="w-full sm:w-auto sm:min-w-max flex items-center py-2 px-6 justify-between relative z-50 bg-white dark:bg-zinc-900">
-          <h1 id="logo" className="font-title dark:text-white text-2xl md:text-3xl text-center pt-1">Enzo Mateus</h1>
-          <Switch
-            onChange={() => setTheme(prevTheme => prevTheme == "dark" ? "light" : "dark")}
-            checked={theme == "dark"}
-            checkedIcon={false}
-            uncheckedIcon={false}
-            height={20}
-            width={60}
-            handleDiameter={25}
-            onHandleColor={"#c0c2cc"}
-            onColor={"#525252"}
-            offHandleColor={"#525252"}
-            offColor={"#c0c2cc"}
-            className="justify-self-end xsm:col-start-3 row-span-2 self-center xsm:row-span-1"
-          />
-          <div className="sm:hidden relative h-[19px] w-7 justify-between cursor-pointer" onClick={toggleNavigation}>
+        <div className="w-full md:w-auto md:min-w-max flex items-center justify-between py-2 px-6 relative z-50 bg-white dark:bg-zinc-900">
+          <div className='flex items-center gap-4 sm:gap-6'>
+            <h1 id="logo" className="font-title dark:text-white text-2xl md:text-3xl text-center pt-1">Enzo Mateus</h1>
+            <Switch
+              onChange={() => setTheme(prevTheme => prevTheme == "dark" ? "light" : "dark")}
+              checked={theme == "dark"}
+              checkedIcon={false}
+              uncheckedIcon={false}
+              height={20}
+              width={60}
+              handleDiameter={25}
+              onHandleColor={"#c0c2cc"}
+              onColor={"#525252"}
+              offHandleColor={"#525252"}
+              offColor={"#c0c2cc"}
+              className="md:pl-4"
+            />
+          </div>
+          <div className="md:hidden relative h-[19px] w-7 justify-between cursor-pointer" onClick={toggleNavigation}>
             <div className={`${showNav ? 'rotate-45 top-1/2 -translate-y-1/2' : ''} absolute top-0 left-0 h-[3px] w-7 bg-black dark:bg-white rounded-full transition-all`}></div>
             <div className={`${showNav ? 'left-5 opacity-0' : ''} absolute top-1/2 -translate-y-1/2 left-0 h-[3px] w-7 bg-black dark:bg-white rounded-full transition-all`}></div>
             <div className={`${showNav ? '-rotate-45 top-1/2 -translate-y-1/2' : ''} absolute bottom-0 left-0 h-[3px] w-7 bg-black dark:bg-white rounded-full transition-all`}></div>
           </div>
         </div>
-        <nav className={`${showNav ? 'top-0 h-screen sm:h-auto px-4' : 'pointer-events-none -top-full sm:pointer-events-auto'} fixed sm:static w-screen sm:w-full bg-white dark:bg-zinc-900 sm:bg-transparent transition-all duration-200 z-10 grid place-items-center sm:flex sm:justify-center`}>
-          <ul className="sm:w-full flex flex-col sm:flex-row sm:justify-end gap-14 sm:gap-2 md:gap-6 items-center list-none">
+        <nav className={`${showNav ? 'top-0 h-screen md:h-auto px-4' : 'pointer-events-none -top-full md:pointer-events-auto'} fixed md:static w-screen md:w-full bg-white dark:bg-zinc-900 md:bg-transparent transition-all duration-200 z-10 grid place-items-center md:flex md:justify-center`}>
+          <ul className="md:w-full flex flex-col md:flex-row md:justify-end gap-14 md:gap-2 md:gap-6 items-center list-none">
             <li className='text-center'><a href="#about" className="nav-item" onClick={() => toggleNavigation()}>Sobre mim</a></li>
             <li className='text-center'><a href="#techs" className="nav-item" onClick={() => toggleNavigation()}>Linguagens & Tecnologias</a></li>
             <li className='text-center'><a href="#projects" className="nav-item" onClick={() => toggleNavigation()}>Projetos</a></li>
@@ -100,7 +102,7 @@ const App = () => {
       <hr/>
 
       <section id="techs">
-        <h2>Tecnologias e Linguagens</h2>
+        <h2>Tecnologias & Linguagens</h2>
         <div className='relative overflow-hidden w-[884px] h-36'>
           <div className='block w-[200%] absolute py-4 animate-techs '>
             <span className='float-left w-1/2'>
