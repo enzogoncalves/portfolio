@@ -8,13 +8,13 @@ type Portfolio = {
 
 const Portfolio = ({title, techs, linkTo, illustration, alt}: Portfolio) => {
   return (
-    <div className="grid grid-cols-1 grid-rows-2 shadow-medium dark:shadow-zinc-500 rounded-md max-w-md overflow-hidden">
+    <div className="project grid grid-cols-1 grid-rows-2 shadow-medium dark:shadow-zinc-500 rounded-md max-w-md overflow-hidden">
         <div className="relative flex flex-col gap-4 p-4">
             <p className='text-base sm:text-lg font-bold uppercase'>{title}</p>
             <div className="flex flex-wrap gap-2">
             {
-                techs.map((tech) => (
-                    <span className='py-2 px-2 sm:py-4 sm:px-3 text-sm border rounded-full shadow-sm'>{tech}</span>
+                techs.map((tech, key) => (
+                    <span key={key} className='py-2 px-2 sm:py-4 sm:px-3 text-sm border rounded-full shadow-sm'>{tech}</span>
                 ))
             }
             </div>
