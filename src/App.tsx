@@ -96,7 +96,7 @@ const App = () => {
           </div>
         </div>
         <nav className={`${showNav ? 'top-0 h-screen md:h-auto px-4' : 'pointer-events-none -top-full md:pointer-events-auto'} fixed md:static w-screen md:w-full bg-white dark:bg-zinc-900 md:bg-transparent transition-all duration-200 z-10 grid place-items-center md:flex md:justify-center`}>
-          <ul className="md:w-full flex flex-col md:flex-row md:justify-end gap-14 md:gap-2 md:gap-6 items-center list-none">
+          <ul className="md:w-full flex flex-col md:flex-row md:justify-end gap-14 md:gap-6 items-center list-none">
             <li className='text-center'><a href="#about" className="nav-item" onClick={() => toggleNavigation()}>Sobre mim</a></li>
             <li className='text-center'><a href="#techs" className="nav-item" onClick={() => toggleNavigation()}>Linguagens & Tecnologias</a></li>
             <li className='text-center'><a href="#projects" className="nav-item" onClick={() => toggleNavigation()}>Projetos</a></li>
