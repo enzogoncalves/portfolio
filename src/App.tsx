@@ -28,7 +28,6 @@ const App = () => {
       if (refToComponent.current) {
         const sr = (await import("scrollreveal")).default
         sr({
-          origin: 'top',
           duration: 500,
           reset: true
         })
@@ -36,11 +35,9 @@ const App = () => {
         sr().reveal(`#about h2, #about img, #about p, #about div a,
           #techs,
           #projects h2, .projects .project div, .project a, .project span, .project img
-        `, {interval: 100, distance: '30px'})
+        `, {origin: 'top', distance: '30px', interval: 100})
 
-        sr().reveal('#contact h3, #contact a div, #contact a p', { interval: 100, distance: '20px'})
-        
-        sr().reveal('#contact .links a', { interval: 100, distance: '10px'})
+        sr().reveal('#contact h3, #contact a div, #contact a p', { interval: 100})
       }
     }
     animate()
@@ -123,10 +120,10 @@ const App = () => {
 
       <hr/>
 
-      <section id="techs">
+      <section id="techs" className='overflow-x-hidden'>
         <h2>Tecnologias & Linguagens</h2>
         <div className='relative overflow-hidden w-[884px] h-36'>
-          <div className='block w-[200%] absolute py-4 animate-techs '>
+          <div className='block w-[200%] absolute py-4 animate-techs overflow-x-hidden'>
             <span className='float-left w-1/2'>
               <Tech
                 alt='js'
