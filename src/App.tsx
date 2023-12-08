@@ -231,6 +231,7 @@ const App = () => {
               linkTo="https://movies-website-enzogoncalves.vercel.app/"
               illustration="imgs/movies-website.png"
               alt="movies and tv shows website illustration"
+							githubLink="movies-website"
             />
             <Portfolio
               title="School Homepage"
@@ -238,6 +239,7 @@ const App = () => {
               linkTo="https://tailwindcss-school-website.vercel.app/"
               illustration="imgs/tailwindcss-school-website.png"
               alt="homepage school website illustration"
+							githubLink="tailwindcss-school-website"
             />
             <Portfolio
               title="Card Memory Game"
@@ -251,6 +253,7 @@ const App = () => {
               linkTo="https://card-memory-game-red.vercel.app/home"
               illustration="imgs/card-memory-game-website.png"
               alt="game website illustration"
+							githubLink="card-memory-game"
             />
           </div>
         </section>
