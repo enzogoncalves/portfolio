@@ -5,6 +5,7 @@ import Tech from "./components/Tech";
 import Switch from "react-switch";
 import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const App = () => {
   const [showNav, setShowNav] = useState<boolean>(false);
@@ -260,6 +261,8 @@ const App = () => {
       </main>
 
       <Footer />
+
+			<SpeedInsights />
     </>
   );
 };
