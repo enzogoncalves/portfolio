@@ -5,7 +5,8 @@ import Tech from "./components/Tech";
 import Switch from "react-switch";
 import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
-import { SpeedInsights } from "@vercel/speed-insights/vue";
+// import { SpeedInsights } from "@vercel/speed-insights/vue";
+import { Analytics } from '@vercel/analytics/react';
 
 const App = () => {
   const [showNav, setShowNav] = useState<boolean>(false);
@@ -262,7 +263,8 @@ const App = () => {
 
       <Footer />
 
-			<SpeedInsights />
+			{/* <SpeedInsights /> */}
+			<Analytics />
     </>
   );
 };
