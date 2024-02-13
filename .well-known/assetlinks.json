@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.example.spotify",
+    "sha256_cert_fingerprints":
+    ["9E:42:EB:96:2E:33:33:05:08:24:10:0B:B6:73:72:62:EF:6F:84:04:12:7D:F7:64:D8:D0:09:79:FB:E4:E2:F8"]
+  }
+}]
