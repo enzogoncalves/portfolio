@@ -230,7 +230,7 @@ const Home = () => {
             <Portfolio
               title="Movies & TvShows Website"
               techs={["React", "Styled Components", "TailwindCSS", "TMDBAPI"]}
-              linkTo="https://movies-website-enzogoncalves.vercel.app/"
+              linkTo="https://movies-website-enzo-mateus-gonalves-projects.vercel.app/"
               illustration="imgs/movies-website.png"
               alt="movies and tv shows website illustration"
 							githubLink="movies-website"
