@@ -187,7 +187,7 @@ const Home = () => {
           <h2 className="h2 text-center">Full Stack Web Developer</h2>
           <div className="flex flex-col sm:flex-row gap-4 items-center">
 						<img
-							src="https://avatars.githubusercontent.com/u/75916483?v=4"
+							src="https://avatars.githubusercontent.com/u/75916483?v=5"
 							alt="profile picture"
 							className="w-[125px] sm:w-[150px] lg:w-[200px] rounded-md pl-2 pb-2"
 						/>
