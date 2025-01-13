@@ -2,7 +2,7 @@
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
     "namespace": "android_app",
-    "package_name": "com.example.spotify",
+    "package_name": "com.example.spotify_clone",
     "sha256_cert_fingerprints":
     ["53:33:A4:F8:F2:4C:B4:2C:3E:74:31:15:0F:8A:82:B0:FA:D2:1B:53:92:2E:C6:62:0D:25:B6:F1:4A:56:A6:A"]
   }
