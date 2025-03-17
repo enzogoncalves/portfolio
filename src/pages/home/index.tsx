@@ -184,7 +184,7 @@ const Home = () => {
 
       <main>
         <section id="about">
-          <h2 className="h2 text-center">Full Stack Web Developer</h2>
+          <h2 className="h2 text-center">Fullstack Developer</h2>
           <div className="flex flex-col sm:flex-row gap-4 items-center">
 						<img
 							src="https://avatars.githubusercontent.com/u/75916483?v=5"
