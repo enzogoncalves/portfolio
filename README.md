@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://enzomateus.com.br"><img src="https://raw.githubusercontent.com/enzogoncalves/portfolio/main/public/readme/portfolio-png.png" alt="Markdownify" width="200"></a>
+  <a href="https://enzomateus.com.br"><img src="https://raw.githubusercontent.com/enzogoncalves/portfolio/main/public/readme/portfolio-png.png" alt="Enzo Mateus Portfolio" width="200"></a>
   <br>
   Portfolio
   <br>
