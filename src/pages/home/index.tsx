@@ -252,7 +252,7 @@ const Home = () => {
                 "Styled Components",
                 "Firebase",
               ]}
-              linkTo="https://card-memory-game-red.vercel.app/home"
+              linkTo="https://card-memory-game-red.vercel.app/"
               illustration="imgs/card-memory-game-website.png"
               alt="game website illustration"
 							githubLink="card-memory-game"
