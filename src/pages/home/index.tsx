@@ -187,15 +187,16 @@ const Home = () => {
           <h2 className="h2 text-center">Fullstack Developer</h2>
           <div className="flex flex-col sm:flex-row gap-4 items-center">
 						<img
-							src="https://avatars.githubusercontent.com/u/75916483?v=5"
+							src="https://github.com/enzogoncalves.png"
 							alt="profile picture"
 							className="w-[125px] sm:w-[150px] lg:w-[200px] rounded-md pl-2 pb-2"
 						/>
 						<p className="font-default font-normal leading-6 text-justify">
 							Meu nome é Enzo Mateus Gonçalves e minha jornada na programação se
 							iniciou em 2019, com o desenvolvimento de aplicações web. Sou Full
-							Stack Web Developer e com interesse em partes do processo do
-							desenvolvimento de aplicativos mobile.
+							Stack Developer, com experiência em aplicativos construídos com Flutter.
+							<br />
+
 						</p>
 					</div>
           <div className="mt-4 flex justify-center md:justify-start gap-4">
@@ -244,7 +245,7 @@ const Home = () => {
 							githubLink="tailwindcss-school-website"
             />
             <Portfolio
-              title="Card Memory Game"
+              title="Memory Card Game"
               techs={[
                 "React",
                 "Typescript",
