@@ -192,9 +192,7 @@ const Home = () => {
 							className="w-[125px] sm:w-[150px] lg:w-[200px] rounded-md pl-2 pb-2"
 						/>
 						<p className="font-default font-normal leading-6 text-justify">
-							Meu nome é Enzo Mateus Gonçalves e minha jornada na programação se
-							iniciou em 2019, com o desenvolvimento de aplicações web. Sou Full
-							Stack Developer, com experiência em aplicativos construídos com Flutter.
+							Sou apaixonado por tecnologia, como a pogramação me permite criar sites e aplicativos funcionais, que resolvem problemas. Cursei Técnico em Análise e Desenvolvimento de Software em 2022. Realizo cursos online de programação e desenvolvimento desde 2020. Atualmente estou cursando Desenvolvimento Web na IOS (Instituto da Oportunidade Social), uma ONG patrocinada pela maior empresa de tecnologia do Brasil, a TOTVS. Minha especialidade é criar sites, aplicativos mobile com Flutter e criar API's no ambiente Javascript / Typescript.
 							<br />
 
 						</p>
