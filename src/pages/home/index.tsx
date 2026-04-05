@@ -59,14 +59,17 @@ const Home = () => {
   function scrollToTop() {
     window.scrollTo(0, 0);
   }
+	
+	useEffect(() => {
+		const handleScroll = () => {
+			setShowScrollToTopButton(window.scrollY >= 300);
+		};
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY >= 300) {
-      setShowScrollToTopButton(true);
-    } else {
-      setShowScrollToTopButton(false);
-    }
-  });
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll)
+		}
+	}, [])
 
   return (
     <>
@@ -201,6 +204,7 @@ const Home = () => {
             <a
               href="https://www.linkedin.com/in/enzo-mateus-673ba31a4/"
               target="_blank"
+							rel="noopener noreferrer"
               className="border border-[#0077B5] dark:hover:border-white shadow-md w-20 h-14 grid place-items-center group dark:bg-[#0077B5] hover:bg-[#0077B5] dark:hover:bg-white transition"
               title="Linkedin redirect link"
             >
@@ -209,6 +213,7 @@ const Home = () => {
             <a
               href="https://github.com/enzogoncalves"
               target="_blank"
+							rel="noopener noreferrer"
               className="border border-neutral-800 shadow-md w-20 h-14 grid place-items-center group dark:bg-neutral-800 hover:bg-neutral-800 dark:hover:bg-neutral-200 transition"
               title="Github redirect link"
             >
